@@ -1,0 +1,22 @@
+{
+  "name": "nodebots_challenge",
+  "version": "0.0.1",
+  "description": "Nodebots challenge",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node --harmony src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "nodebots"
+  ],
+  "author": "Henry Williams",
+  "license": "MIT",
+  "dependencies": {
+    "card-swipe": "^1.0.2",
+    "mongoose": "^4.5.7",
+    "serialport": "^4.0.1",
+    "usb": "^1.1.2"
+  }
+}
