@@ -28,7 +28,7 @@ function checkInOrOut(token, callback) {
       if(err) return callback(new Error('An error occurred'))
       let action = checkedIn ? Actions.checkedIn : Actions.checkedOut
       _logAction(token, action)
-      callback(null, checkedIn)
+      callback(null, checkedIn, card.name)
     })
   })
 }
@@ -41,16 +41,17 @@ function isRegistered(token, callback) {
   })
 }
 
-function registerCard(token, callback) {
+function registerCard(token, name, callback) {
   let card = {    
     token: token,
+    name: name,
     checkedIn: false
   }
 
   Card.create(card, err => {
-    if(err) return callback(new Error('Error registering card'))
+    if(err && callback) return callback(new Error('Error registering card'))
     _logAction(token, Actions.registered)
-    callback()
+    if(callback) callback()
   })
 }
 
