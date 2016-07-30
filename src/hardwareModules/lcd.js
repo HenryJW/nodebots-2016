@@ -1,11 +1,11 @@
 'use strict'
 
-const five = require("johnny-five")
+const five = require('johnny-five')
 const board = new five.Board();
 let lcd = null
 let ready = false
 
-board.on("ready", function() {
+board.on('ready', function() {
   lcd = new five.LCD({
     pins: [7, 8, 9, 10, 11, 12],
     backlight: 6,
