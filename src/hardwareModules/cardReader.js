@@ -1,12 +1,13 @@
 var onData = null
 
 function onInput(callback) {
+  //FIXME: Quick hack since this function is only called once :P
   onData = callback;
 }  
 
 var userID = '';
-var flag = true;
 
+// FIXME: Should to use built-in readline module instead
 process.stdin.on('keypress', function (key) {
   if (key === '\r') {
     onData(userID)

@@ -15,6 +15,8 @@ const CardTypes = {
 
 let id = ''
 
+// Warning: Hacky code ahead. Proceed at your own risk
+
 mongoose.connect(connectionString, (err) => {
   if(err) return _writeError('Unable to connect to database')
 
